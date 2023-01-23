@@ -17,12 +17,18 @@ def draw_rectangle(start_pos_x, start_pos_y, height, width):
     turtle.penup()
 
 def draw_door(start_pos_x, start_pos_y, height, width):
+    turtle.color('black', 'brown')
+    turtle.begin_fill()
     draw_rectangle(start_pos_x, start_pos_y, height, width)
+    turtle.end_fill()
     turtle.penup()
     turtle.setpos(start_pos_x+3*width/4, start_pos_y+height/2)
     turtle.seth(0)
     turtle.pendown()
+    turtle.color('black', 'gold')
+    turtle.begin_fill()
     turtle.circle(width/8)
+    turtle.end_fill()
     turtle.penup()
 
 def draw_garage_lines(start_pos_x,start_pos_y, end_pos_x):
@@ -32,12 +38,15 @@ def draw_garage_lines(start_pos_x,start_pos_y, end_pos_x):
     turtle.penup()
 
 def draw_garage_door(start_pos_x, start_pos_y, height, width, num_lines):
+    turtle.begin_fill()
+    turtle.color("black", "gray")
     draw_rectangle(start_pos_x, start_pos_y, height, width)
+    turtle.end_fill
     for i in range(num_lines-1):
         draw_garage_lines(start_pos_x, start_pos_y + (height*(i+1))/num_lines, start_pos_x + width)
 
 
-turtle.color('blue', 'yellow')
+turtle.color('brown', 'tan')
 
 door_height = 50
 door_x = 10
