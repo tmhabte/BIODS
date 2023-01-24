@@ -1,6 +1,14 @@
 import turtle
 
 def draw_rectangle(start_pos_x, start_pos_y, height, width):
+    '''
+    Draws a rectangle
+    :param start_pos_x: x position to begin drawing (lower left corner)
+    :param start_pos_y: y position to begin drawing (lower left corner)
+    :param height:
+    :param width:
+    :return: None- draws
+    '''
     turtle.penup()
     turtle.setpos(start_pos_x, start_pos_y)
     turtle.pendown()
@@ -17,6 +25,14 @@ def draw_rectangle(start_pos_x, start_pos_y, height, width):
     turtle.penup()
 
 def draw_door(start_pos_x, start_pos_y, height, width):
+    '''
+    Draws a door and doorknob
+    :param start_pos_x: x position to begin drawing (lower left corner)
+    :param start_pos_y: y position to begin drawing (lower left corner)
+    :param height:
+    :param width:
+    :return: None- draws
+    '''
     turtle.color('black', 'brown')
     turtle.begin_fill()
     draw_rectangle(start_pos_x, start_pos_y, height, width)
@@ -32,12 +48,28 @@ def draw_door(start_pos_x, start_pos_y, height, width):
     turtle.penup()
 
 def draw_garage_lines(start_pos_x,start_pos_y, end_pos_x):
+    '''
+    Draws lines on garage door
+    :param start_pos_x: x position to begin drawing
+    :param start_pos_y: y position to begin drawing
+    :param end_pos_x: x position to end drawing
+    :return: None- draws
+    '''
     turtle.setpos(start_pos_x, start_pos_y)
     turtle.pendown()
     turtle.setpos(end_pos_x, start_pos_y)
     turtle.penup()
 
 def draw_garage_door(start_pos_x, start_pos_y, height, width, num_lines):
+    '''
+    Draws garage door
+    :param start_pos_x: x position to begin drawing (lower left corner)
+    :param start_pos_y: y position to begin drawing (lower left corner)
+    :param height:
+    :param width:
+    :param num_lines: number of lines on garage door
+    :return: None- draws
+    '''
     turtle.begin_fill()
     turtle.color("black", "gray")
     draw_rectangle(start_pos_x, start_pos_y, height, width)
@@ -46,8 +78,9 @@ def draw_garage_door(start_pos_x, start_pos_y, height, width, num_lines):
         draw_garage_lines(start_pos_x, start_pos_y + (height*(i+1))/num_lines, start_pos_x + width)
 
 
-turtle.color('brown', 'tan')
+turtle.color('pink', 'tan')
 
+# Sample parameters
 door_height = 50
 door_x = 10
 door_y = 0
